@@ -1,0 +1,60 @@
+<%= form_for :player do |f| %>
+	<p>
+		<%= f.label :name %><br>
+		<%= f.text_field :name %>
+	</p>
+
+	<p>
+		<%= f.label :race %><br>
+		<%= f.select(:race, [["Dragonborn", 1], ["Dwarf",2],["Eladrin",3],["Elf",4],["Half-Elf",5],["Halfling",6],["Human",7],["Tiefling",8]]) %>
+	</p>
+
+	<p>
+		<%= f.label :class %><br>
+		<%= f.select(:class, [["Cleric",1],["Fighter",2],["Paladin",3],["Ranger",4],["Rogue",5],["Warlock",6],["Warlord",7],["Wizard",8]]) %>
+	</p>
+
+	<p>
+		<%= f.label :score_method %><br>
+		<%= f.select(:score_method, options_for_select([["Standard Array",1],["Point Buy",2],["Roll",3]])) %>
+	</p>
+
+	<p id="score_method"></p>
+
+	<p class="attr_holder">
+		<%= f.label :str %>
+		<%= f.number_field :str, value: 16 %>
+		<span class="attribute" id="str"></p>
+	</p>
+
+	<p class="attr_holder">
+		<%= f.label :con %>
+		<%= f.number_field :con, value: 14 %>
+		<span class="attribute" id="con"></p>
+	</p>
+
+	<p class="attr_holder">
+		<%= f.label :dex %>
+		<%= f.number_field :dex, value: 13 %>
+		<span class="attribute" id="dex"></p>
+	</p>
+
+	<p class="attr_holder">
+		<%= f.label :int %>
+		<%= f.number_field :int, value: 12 %>
+		<span class="attribute" id="int"></p>
+	</p>
+
+	<p class="attr_holder">
+		<%= f.label :wis %>
+		<%= f.number_field :wis, value: 11 %>
+		<span class="attribute" id="wis"></p>
+	</p>
+
+	<p class="attr_holder">
+		<%= f.label :cha %>
+		<%= f.number_field :cha, value: 10 %>
+		<span class="attribute" id="cha"></p>
+	</p>
+
+<% end %>
