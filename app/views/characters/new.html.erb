@@ -1,0 +1,94 @@
+<%= form_for :character, url: players_path do |f| %>
+	<p>
+		<%= f.label :name %><br>
+		<%= f.text_field :name %>
+	</p>
+
+	<p>
+		<%= f.label :age %><br>
+		<%= f.text_field :age %>
+	</p>
+
+	<p>
+		<%= f.label :gender %><br>
+		<%= f.text_field :gender %>
+	</p>
+
+	<p>
+		<%= f.label :height %><br>
+		<%= f.text_field :height %>
+	</p>
+
+	<p>
+		<%= f.label :weight %><br>
+		<%= f.text_field :weight %>
+	</p>
+
+	<p>
+		<%= f.label :race %><br>
+		<%= f.select(:race, [["Dragonborn", "Dragonborn"], ["Dwarf","Dwarf"],["Eladrin","Eladrin"],["Elf","Elf"],["Half-Elf","Half-Elf"],["Halfling","Halfling"],["Human","Human"],["Tiefling","Tiefling"]]) %>
+	</p>
+
+	<p>
+		<%= f.label :char_class %><br>
+		<%= f.select(:char_class, [["Cleric","Cleric"],["Fighter","Fighter"],["Paladin","Paladin"],["Ranger","Ranger"],["Rogue","Rogue"],["Warlock","Warlock"],["Warlord","Warlord"],["Wizard","Wizard"]]) %>
+	</p>
+
+	<p>
+		<%= f.label :score_method %><br>
+		<%= f.select(:score_method, options_for_select([["Standard Array",1],["Point Buy",2],["Roll",3]])) %>
+	</p>
+
+	<p id="score_method"></p>
+
+	<p class="attr_holder">
+		<%= f.label :str %>
+		<%= f.number_field :str, value: 16 %>
+		<span class="attribute" id="str"></p>
+	</p>
+
+	<p class="attr_holder">
+		<%= f.label :con %>
+		<%= f.number_field :con, value: 14 %>
+		<span class="attribute" id="con"></p>
+	</p>
+
+	<p class="attr_holder">
+		<%= f.label :dex %>
+		<%= f.number_field :dex, value: 13 %>
+		<span class="attribute" id="dex"></p>
+	</p>
+
+	<p class="attr_holder">
+		<%= f.label :int %>
+		<%= f.number_field :int, value: 12 %>
+		<span class="attribute" id="int"></p>
+	</p>
+
+	<p class="attr_holder">
+		<%= f.label :wis %>
+		<%= f.number_field :wis, value: 11 %>
+		<span class="attribute" id="wis"></p>
+	</p>
+
+	<p class="attr_holder">
+		<%= f.label :cha %>
+		<%= f.number_field :cha, value: 10 %>
+		<span class="attribute" id="cha"></p>
+	</p>
+
+	<p>
+		<%= f.label :alignment %><br>
+		<%= f.select(:alignment, [["Good", "Good"], ["Lawful Good", "Lawful Good"], ["Evil", "Evil"], ["Chaotic Evil", "Chaotic Evil"], ["Unaligned", "Unaligned"]]) %>
+	</p>
+
+	<p>
+		<%= f.label :diety %>
+		<%= f.text_field :diety %>
+	</p>
+
+	<p>
+		<%= f.submit %>
+	</p>
+
+<% end %>

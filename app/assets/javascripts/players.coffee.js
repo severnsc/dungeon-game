@@ -2,6 +2,16 @@ $(document).ready(function(){
 	$("#player_score_method").on('change', function(){
 		var element = document.getElementById('player_score_method');
 		if(element.value == 1){
+			var parent = document.getElementById("score_method");
+			while(parent.firstChild){
+				parent.removeChild(parent.firstChild);
+			};
+			parents = document.querySelectorAll("span.attribute")
+			for(i=0;i<parents.length;i++){
+				while(parents[i].firstChild){
+					parents[i].removeChild(parents[i].firstChild)
+				};
+			}
 			var ids = [["player_str",16], ["player_con",14],["player_dex",13], ["player_int",12], ["player_wis",11], ["player_cha",10]];
 			var attrs = [["min",11], ["max",16]];
 			for(i=0;i<ids.length;i++){
@@ -150,7 +160,34 @@ $(document).ready(function(){
 				};
 			});
 		}else{
-
+			var parent = document.getElementById("score_method");
+			while(parent.firstChild){
+				parent.removeChild(parent.firstChild);
+			};
+			var paragraph = document.createElement("P");
+			var textnode = document.createTextNode("Arrange rolled point values as you like");
+			paragraph.appendChild(textnode);
+			parent.appendChild(paragraph);
+			parents = document.querySelectorAll("span.attribute")
+			for(i=0;i<parents.length;i++){
+				while(parents[i].firstChild){
+					parents[i].removeChild(parents[i].firstChild)
+				};
+			}
+			var rolled_scores = []
+			function getRandomIntInclusive(min,max){
+				min = Math.ceil(min);
+				max = Math.floor(max);
+				return Math.floor(Math.random() * (max-min+1)) + min;
+			};
+			for(i=0;i<6;i++){
+				rolled_scores.push(getRandomIntInclusive(3,18))
+			};
+			var ids = ["player_str", "player_con", "player_dex", "player_int", "player_wis", "player_cha"];
+			for(i=0;i<ids.length;i++){
+				el = document.getElementById(ids[i])
+				el.setAttribute("value",rolled_scores[i]);
+			};
 		};
 	});
 });

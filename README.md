@@ -1,24 +1,11 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+To do: 
 
-Things you may want to cover:
+1. Change player model to represent the actual user. Username, password, session cookies etc.
 
-* Ruby version
+2. Migrate the current info in the player model to the Character model. Make general methods and attributes that apply to all characters in the parent "Character" class and then child classes for individual races and classes
 
-* System dependencies
+3. Races have many: languages, ability mods, racial powers
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+4. Classes have many weapons proficiencies, armor proficiencies and def mods

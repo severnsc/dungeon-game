@@ -1,0 +1,37 @@
+<h1><%= @player.name %></h1>
+<p>Race: <%= @player.race %></p>
+<p>Class: <%= @player.char_class %></p>
+<table>
+	<thead>
+		<tr>
+			<th>Attribute</th>
+			<th>Value</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>STR</td>
+			<td><%= @player.str %></td>
+		</tr>
+		<tr>
+			<td>CON</td>
+			<td><%= @player.con %></td>
+		</tr>
+		<tr>
+			<td>DEX</td>
+			<td><%= @player.dex %></td>
+		</tr>
+		<tr>
+			<td>INT</td>
+			<td><%= @player.int %></td>
+		</tr>
+		<tr>
+			<td>WIS</td>
+			<td><%= @player.wis %></td>
+		</tr>
+		<tr>
+			<td>CHA</td>
+			<td><%= @player.cha %></td>
+		</tr>
+	</tbody>
+</table>

@@ -1,0 +1,7 @@
+<h1><%= @player.username %></h1>
+<h2>Characters</h2>
+<% @player.characters.each do |character| %>
+<p>
+<%= character.name %> | <%= link_to "Show", character_path %>
+</p>
+<% end %>
